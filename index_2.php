@@ -1,6 +1,7 @@
 <?php
 class clapton{
     var $eric;
+    var $song;
     private $name;
     public $clapton;
     function __construct($my_name)
@@ -15,5 +16,20 @@ class clapton{
     }
     function set_name($new_name){
         $this->eric= $new_name;
+    }
+}
+class song extends clapton{
+
+    protected function set_song($new_song){
+        if ($new_song == "Layla"){
+            $this->song=$new_song;
+        }
+        else if($new_name=="Layla"){
+            $this->song=$new_song;
+            clapton::set_name($song);
+        }
+    }
+    function __construct($song){
+        $this->set_name($song);
     }
 }
